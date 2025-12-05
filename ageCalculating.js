@@ -16,9 +16,9 @@ function showResult(result) {
     resultDom.innerHTML = `
     You are ${result.year>1? result.year+"years": result.year+"year"},
     ${result.month>1? result.month+"months": result.month+"month"},
-    ${result.day>1? result.day+"days": result.year+"day"},
-    ${result.hour>1? result.hour+"hours": result.year+"hour"},
-    ${result.min>1? result.min+"minutes": result.year+"minutes"}
+    ${result.day>1? result.day+"days": result.day+"day"},
+    ${result.hour>1? result.hour+"hours": result.hour+"hour"},
+    ${result.min>1? result.min+"minutes": result.min+"minutes"}
     `;
 }
 
@@ -41,7 +41,7 @@ function diffDateTime(birthDateTime, now = new Date()) {
         day += prevMonth.getDate();
         month--;
     }
-    if (month < 0) { month += 12; years-- }
+    if (month < 0) { month += 12; year-- }
     return { year, month, day, hour, min }
 }
 
